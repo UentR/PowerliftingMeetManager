@@ -19,6 +19,33 @@
   }
 }
 
+
+@layer utilities {
+  /* Masque la scrollbar pour Chrome, Safari et Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Masque la scrollbar pour IE, Edge et Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE et Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Retire les flèches sur Chrome, Safari, Edge, Opera */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Retire les flèches sur Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
