@@ -30,11 +30,11 @@ export default class Athlete {
     public order(mouv: number) : [number, number, number] {
         switch (mouv) {
             case 0:
-                return [this.squat.tries, this.squat.getNextWeight(), this.id];
+                return [this.squat.tries, this.squat.getCurrentWeight(), this.id];
             case 1:
-                return [this.bench.tries, this.bench.getNextWeight(), this.id];
+                return [this.bench.tries, this.bench.getCurrentWeight(), this.id];
             case 2:
-                return [this.deadlift.tries, this.deadlift.getNextWeight(), this.id];
+                return [this.deadlift.tries, this.deadlift.getCurrentWeight(), this.id];
         }
         return [-1, -1, -1];
     }
@@ -78,6 +78,19 @@ export default class Athlete {
                 break;
         }
     }
+
+    public getLastWeight(mouv: number) : number {
+        switch (mouv) {
+            case 0:
+                return this.squat.getLastWeight();
+            case 1:
+                return this.bench.getLastWeight();
+            case 2:
+                return this.deadlift.getLastWeight();
+        }
+        return -1;
+    }
+
 
     public getLastLight(mouv: number) : number {
         switch (mouv) {

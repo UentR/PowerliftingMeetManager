@@ -43,6 +43,21 @@ export default class Categories {
         if (a != undefined) {
             this.waitingForValidation.push(a);
         }
+        this.reorder();
+    
+    }
+
+    public nextAttemptForAthlete(Name: string, Weight: number) {
+        for (let i = 0; i < this.waitingForValidation.length; i++) {
+            if (this.waitingForValidation[i].getName() == Name) {
+                this.waitingForValidation[i].setNewWeight(Weight, this.currentMouvement);
+                let a = this.waitingForValidation.splice(i, 1);
+                this.athletes.push(a[0]);
+                this.reorder();
+                return;
+            }
+        
+        }
     }
 
     private reorder() : void {
@@ -50,15 +65,9 @@ export default class Categories {
             const keyA = a.order(this.currentMouvement);
             const keyB = b.order(this.currentMouvement);
             
-            if (keyA[0] !== keyB[0]) {
-                return keyA[0] - keyB[0];
-            }
-
-            if (keyA[1] !== keyB[1]) {
-                return keyA[1] - keyB[1];
-            }
-
-            return keyA[2] - keyB[2];
+            return  (keyA[0] - keyB[0]) ||
+                    (keyA[1] - keyB[1]) ||
+                    (keyB[2] - keyA[2]);
         });
     }
 }

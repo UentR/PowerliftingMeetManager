@@ -39,13 +39,24 @@ export default class Mouvement {
         return -1;
     }
 
+    public getLastWeight() : number {
+        switch (this.tries) {
+            case 1:
+                return this.w1;
+            case 2:
+                return this.w2;
+        }
+        return -1;
+    }
+
+
 
     public setWeight(weight: number) : void {
         switch (this.tries) {
-            case 0:
+            case 1:
                 this.w2 = weight;
                 break;
-            case 1:
+            case 2:
                 this.w3 = weight;
                 break;
         }
