@@ -5,6 +5,15 @@
   --foreground: #171717;
 }
 
+@theme {
+  /* Your SBD Colors */
+  --color-SBD-red: #cc0000;
+  --color-SBD-black: #111111;
+
+  /* Your Helvetica Neue Font Stack */
+  --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
