@@ -20,7 +20,7 @@ export default function Home() {
   const [class65] = useState(() => {
       let cat = new Categories("-65kg");
       let q = new Athlete("Quentin RIGGI", 63.4, 150, 100, 200, 9);
-      let j = new Athlete("Joris DEGROOTE", 64.9, 175, 105, 180, 5);
+      let j = new Athlete("Joris ??", 64.9, 175, 105, 180, 5);
       let s = new Athlete("Sebastien ??", 62, 100, 80, 150, 6);
       
       cat.addAthlete(q);
