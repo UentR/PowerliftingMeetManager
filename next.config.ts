@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/meet-manager",
+  basePath: "/PowerliftingMeetManager",
+  assetPrefix: '/PowerliftingMeetManager/',
 };
 
 export default nextConfig;
